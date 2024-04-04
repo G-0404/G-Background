@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { loadEnv } from 'vite'
+import { loadEnv, defineConfig } from 'vite'
 import type { UserConfig, ConfigEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -14,6 +14,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
 import UnoCSS from 'unocss/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
+// gzip压缩需要引入vite-plugin-compression
+import viteCompression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 const root = process.cwd()
@@ -22,7 +24,7 @@ function pathResolve(dir: string) {
   return resolve(root, '.', dir)
 }
 
-export default ({ command, mode }: ConfigEnv): UserConfig => {
+export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   let env = {} as any
   const isBuild = command === 'build'
   if (!isBuild) {
@@ -90,7 +92,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       ViteEjsPlugin({
         title: env.VITE_APP_TITLE
       }),
-      UnoCSS()
+      UnoCSS(),
+      viteCompression()
     ],
 
     css: {
@@ -175,4 +178,4 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       ]
     }
   }
-}
+})

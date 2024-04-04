@@ -109,6 +109,7 @@
     "typescript": "5.4.3",
     "unocss": "^0.58.6",
     "vite": "5.2.2",
+    "vite-plugin-compression": "^0.5.1",
     "vite-plugin-ejs": "^1.7.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-mock": "2.9.6",
