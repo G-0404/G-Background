@@ -1,3 +1,13 @@
+/*
+ * @Author: 微生
+ * @Date: 2024-04-04 16:28:24
+ * @LastEditors: WeiSheng 842469165@qq.com
+ * @LastEditTime: 2024-04-04 17:59:23
+ * @FilePath: /background-G/commitlint.config.js
+ * @Description:
+ *
+ * Copyright (c) 2024 by 微生, All Rights Reserved.
+ */
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
@@ -19,7 +29,8 @@ module.exports = {
         'mod', // 不确定分类的修改
         'wip', // 开发中
         'types', // 类型修改
-        'release' // 版本发布
+        'release', // 版本发布
+        'update' // 功能更新
       ]
     ],
     'subject-full-stop': [0, 'never'],
