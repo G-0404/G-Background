@@ -1,3 +1,13 @@
+<!--
+ * @Author: 微生
+ * @Date: 2024-04-04 16:28:24
+ * @LastEditors: WeiSheng 842469165@qq.com
+ * @LastEditTime: 2024-04-04 18:04:52
+ * @FilePath: /background-G/src/layout/Layout.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2024 by 微生, All Rights Reserved. 
+-->
 <script lang="tsx">
 import { computed, defineComponent, unref } from 'vue'
 import { useAppStore } from '@/store/modules/app'
